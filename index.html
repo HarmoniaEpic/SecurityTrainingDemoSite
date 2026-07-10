@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>昼餉缶詰肉 迷惑行為ずかん｜通知にあわてない練習</title>
+<meta name="description" content="通知が鳴っても、あわてない練習。届いた缶の絵をクリックすると、その迷惑行為の解説に飛びます。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <button id="bgm-toggle" class="bgm-toggle is-on" type="button" aria-pressed="true">
+    <span class="bgm-toggle__icon" aria-hidden="true">♪</span>
+    <span class="bgm-toggle__label">音を止める</span>
+  </button>
+
+  <header class="hero">
+    <div class="hero__inner">
+      <p class="hero__eyebrow">練習用・パロディ</p>
+      <h1 class="hero__title">昼餉缶詰肉<span class="hero__title-sub">迷惑行為ずかん</span></h1>
+      <p class="hero__lead">通知が鳴っても、あわてない練習です。届いた缶の絵をクリックすると、その迷惑行為の解説に飛びます。</p>
+    </div>
+    <figure class="hero__can">
+      <img src="images/base.jpg" alt="棚に置かれた昼餉缶詰肉の缶。顔のついたランチョンミートのパロディ。" width="1600" height="873">
+    </figure>
+  </header>
+
+  <main>
+    <section class="panel" aria-labelledby="start-h">
+      <h2 id="start-h" class="panel__title">はじめる</h2>
+      <p class="panel__text">下のボタンを押すと、通知の許可を尋ねます。許可すると、選んだ間隔で六種類の迷惑行為が缶の姿で届きます。焦らず眺めて、気になった通知（または下の棚の缶）をクリックすると、Wikipedia や IPA の解説へ飛びます。このサイトの通知は訓練用なので「止める」を押すと止まります（安全のため数分で自動的に止まります）。</p>
+      <div class="controls">
+        <button id="start-fixed" class="btn btn--primary" type="button">通知を許可して始める（10秒おき）</button>
+        <button id="start-random" class="btn btn--primary" type="button">通知を許可して始める（5秒〜15秒）</button>
+        <button id="stop" class="btn" type="button" disabled>止める</button>
+      </div>
+      <p id="status" class="status" role="status">待機中です。</p>
+      <p class="panel__note">通知そのものの見た目は、お使いの端末が決めます。缶の絵を大きく出せるかは環境しだいで、スマートフォンなどでは小さなアイコンだけになることもあります。缶をクリックして解説へ飛ぶ流れは、通知が出なくても下の棚から試せます。</p>
+    </section>
+
+    <section class="shelf" aria-labelledby="shelf-h">
+      <h2 id="shelf-h" class="shelf__title">迷惑行為の棚</h2>
+      <ul class="cans">
+
+        <li class="can" id="card-mail">
+          <a class="can__link" href="https://ja.wikipedia.org/wiki/スパム_(メール)" target="_blank" rel="noopener">
+            <span class="can__frame"><img class="can__img" src="images/mail.jpg" alt="封筒の山に埋もれて溺れる昼餉缶詰肉" loading="lazy" width="1600" height="873"></span>
+            <span class="can__body">
+              <span class="can__name">メールスパム</span>
+              <span class="can__tag">誰も頼んでいないのに、封筒が山になって届く。</span>
+              <span class="can__more">解説を読む →</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="can" id="card-seo">
+          <a class="can__link" href="https://ja.wikipedia.org/wiki/検索エンジンスパム" target="_blank" rel="noopener">
+            <span class="can__frame"><img class="can__img" src="images/seo.jpg" alt="自称No.1の宣伝文句で埋め尽くされた昼餉缶詰肉と、覗き込む虫眼鏡" loading="lazy" width="1600" height="873"></span>
+            <span class="can__body">
+              <span class="can__name">検索エンジンスパム</span>
+              <span class="can__tag">「最高・No.1」を自分で敷き詰めて、自称一位。</span>
+              <span class="can__more">解説を読む →</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="can" id="card-phishing">
+          <a class="can__link" href="https://ja.wikipedia.org/wiki/フィッシング_(詐欺)" target="_blank" rel="noopener">
+            <span class="can__frame"><img class="can__img" src="images/phishing.jpg" alt="釣り針の餌にされ、付け髭で変装した昼餉缶詰肉" loading="lazy" width="1600" height="873"></span>
+            <span class="can__body">
+              <span class="can__name">フィッシング</span>
+              <span class="can__tag">見え透いた付け髭で「絶対に罠じゃない」と誘う。</span>
+              <span class="can__more">解説を読む →</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="can" id="card-stealth">
+          <a class="can__link" href="https://ja.wikipedia.org/wiki/ステルスマーケティング" target="_blank" rel="noopener">
+            <span class="can__frame"><img class="can__img" src="images/stealth.jpg" alt="仮面をつけ「宣伝ではない」の札を掲げる昼餉缶詰肉と、そっくりの取り巻き" loading="lazy" width="1600" height="873"></span>
+            <span class="can__body">
+              <span class="can__name">ステルスマーケティング</span>
+              <span class="can__tag">仮面で「これは宣伝ではない」と書いた札を掲げる。</span>
+              <span class="can__more">解説を読む →</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="can" id="card-support-scam">
+          <a class="can__link" href="https://www.ipa.go.jp/security/anshin/measures/fakealert.html" target="_blank" rel="noopener">
+            <span class="can__frame"><img class="can__img" src="images/support-scam.jpg" alt="「感染しました」の偽警告に慌てる昼餉缶詰肉" loading="lazy" width="1600" height="873"></span>
+            <span class="can__body">
+              <span class="can__name">サポート詐欺</span>
+              <span class="can__tag">「缶が感染しました！」と脅して、焦らせにかかる。</span>
+              <span class="can__more">解説を読む →</span>
+            </span>
+          </a>
+        </li>
+
+        <li class="can" id="card-notification">
+          <a class="can__link" href="https://www.ipa.go.jp/security/anshin/attention/2021/mgdayori20210309.html" target="_blank" rel="noopener">
+            <span class="can__frame"><img class="can__img" src="images/notification.jpg" alt="通知の吹雪に埋もれて目を回す昼餉缶詰肉" loading="lazy" width="1600" height="873"></span>
+            <span class="can__body">
+              <span class="can__name">通知スパム</span>
+              <span class="can__tag">このサイトで練習するもの。止め方が少しややこしい。</span>
+              <span class="can__more">解説を読む →</span>
+            </span>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <p class="foot__text">これは通知スパムに慣れるための練習ページです。「昼餉缶詰肉」は実在しないパロディで、特定の商品・企業とは関係ありません。解説の飛び先は Wikipedia と、情報処理推進機構（IPA）の注意喚起ページです。</p>
+    <p class="foot__credit">Images and Sounds are generated with Gemini. This page was designed with Claude.</p>
+  </footer>
+
+  <div id="trap-overlay" class="trap-overlay" role="dialog" aria-modal="true" aria-label="ボタントラップの警告" hidden>
+    <div class="trap-overlay__inner">
+      <p class="trap-overlay__text">悪意あるサイトでは、こういった思わず押したくなる「止める・閉じる・拒否する」系のボタンにトラップが仕込まれている場合があります。</p>
+      <button class="trap-overlay__close" type="button">閉じる</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
